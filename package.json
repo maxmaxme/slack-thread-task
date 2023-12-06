@@ -1,0 +1,21 @@
+{
+  "name": "task-creator-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@slack/bolt": "3.12.2",
+    "dotenv": "16.0.3",
+    "openai": "^4.20.1"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.20"
+  }
+}
