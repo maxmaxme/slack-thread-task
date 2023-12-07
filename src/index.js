@@ -48,7 +48,7 @@ app.message(/.*/, async ({message, say}) => {
     Remember to use the following format in JSON:
     {
       "summary": "Task summary (max 80 characters)",
-      "description": "Task description (max 1000 characters)"
+      "description": "Task description (max 2048 characters)"
     }
     
     Use only information from the conversation below and do not add any additional information.
