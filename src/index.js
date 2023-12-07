@@ -45,12 +45,14 @@ app.message(/.*/, async ({message, say}) => {
 
     const systemPrompt = `
     You are a bot <@${botId}> and you need to create a task summary and description based on the conversation below.
+    Find the main problem and suggest a task to solve it. If there are several problems, choose the most important one.
     Remember to use the following format in JSON:
     {
       "summary": "Task summary (max 80 characters)",
       "description": "Task description (max 2048 characters)"
     }
     
+    Be brief and divide the description into paragraphs. (each paragraph should be no more than 3-4 sentences)
     Use only information from the conversation below and do not add any additional information.
     Don't ask any questions, just create a task summary and description.
     Summary and description should be written in English.
