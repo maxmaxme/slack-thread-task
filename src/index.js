@@ -1,6 +1,7 @@
 const {App} = require("@slack/bolt");
 const dotenv = require('dotenv');
 const OpenAI = require('openai');
+const http = require('http');
 
 dotenv.config();
 
@@ -90,3 +91,8 @@ app.message(/.*/, async ({message, say}) => {
   botId = test.user_id;
   slackBaseUrl = test.url
 })();
+
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World!');
+}).listen(process.env.PORT || 8080);
