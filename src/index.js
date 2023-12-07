@@ -34,7 +34,7 @@ app.message(/.*/, async ({message, say}) => {
         channel: message.channel,
         ts: message.thread_ts,
       })).messages
-        .filter(m => m.user !== botId)
+        .filter(m => m.bot_id !== botId)
 
       messages.push(...threadMessages);
     }
