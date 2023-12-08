@@ -52,7 +52,7 @@ app.message(/.*/, async ({message, say}) => {
       "description": "Task description (max 2048 characters)"
     }
     
-    Be brief and divide the description into paragraphs. (each paragraph should be no more than 3-4 sentences)
+    Be very brief and divide the description into paragraphs (use \n). (each paragraph should be no more than 2 sentences)
     Use only information from the conversation below and do not add any additional information.
     Don't ask any questions, just create a task summary and description.
     Summary and description should be written in English.
