@@ -90,7 +90,7 @@ app.message(/.*/, async ({message, say}) => {
   await app.start(process.env.PORT || 3000);
 
   const test = await app.client.auth.test()
-  botId = test.user_id;
+  botId = test.bot_id;
   slackBaseUrl = test.url
 })();
 
