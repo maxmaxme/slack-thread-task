@@ -34,7 +34,7 @@ app.message(/.*/, async ({message, say}) => {
         channel: message.channel,
         ts: message.thread_ts,
       })).messages
-        .filter(m => m.bot_id !== botId)
+        .filter(m => m.user !== botId)
 
       messages.push(...threadMessages);
     }
@@ -90,7 +90,7 @@ app.message(/.*/, async ({message, say}) => {
   await app.start(process.env.PORT || 3000);
 
   const test = await app.client.auth.test()
-  botId = test.bot_id;
+  botId = test.user_id;
   slackBaseUrl = test.url
 })();
 
