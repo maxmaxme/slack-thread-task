@@ -85,11 +85,12 @@ app.message(/.*/, async ({message, say}) => {
 });
 
 (async () => {
+  const port = process.env.PORT || 3000;
   // Start the app
-  await app.start(process.env.PORT || 3000);
+  await app.start(port);
 
   const test = await app.client.auth.test()
   botId = test.user_id;
   slackBaseUrl = test.url
-  console.log('⚡️ Bolt app is running!', test)
+  console.log('⚡️ Bolt app is running on port ' + port, test);
 })();
