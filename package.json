@@ -1,5 +1,5 @@
 {
-  "name": "task-creator-bot",
+  "name": "slack-thread-task",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,12 +8,16 @@
     "start": "node src/index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Maxim Lepekha",
   "license": "ISC",
+  "engines": {
+    "node": "16.x",
+    "npm": "8.x"
+  },
   "dependencies": {
-    "@slack/bolt": "3.12.2",
-    "dotenv": "16.0.3",
-    "openai": "^4.20.1"
+    "@slack/bolt": "3.17.0",
+    "dotenv": "16.3.1",
+    "openai": "4.24.1"
   },
   "devDependencies": {
     "nodemon": "2.0.20"
