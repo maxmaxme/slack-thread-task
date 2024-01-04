@@ -1,7 +1,6 @@
 const {App} = require("@slack/bolt");
 const dotenv = require('dotenv');
 const OpenAI = require('openai');
-const http = require('http');
 
 dotenv.config();
 
@@ -11,10 +10,10 @@ const openai = new OpenAI({
 
 const youtrackBaseUrl = process.env.YOUTRACK_BASE_URL
 const app = new App({
-  token: process.env.token, //Find in the Oauth  & Permissions tab
-  signingSecret: process.env.signingSecret, // Find in Basic Information Tab
+  token: process.env.SLACK_TOKEN, //Find in the Oauth  & Permissions tab
+  signingSecret: process.env.SLACK_SIGNING_SECRET, // Find in Basic Information Tab
   socketMode: true,
-  appToken: process.env.appToken // Token from the App-level Token that we created
+  appToken: process.env.SLACK_APP_TOKEN // Token from the App-level Token that we created
 });
 let botId = null;
 let slackBaseUrl = null;
@@ -93,8 +92,3 @@ app.message(/.*/, async ({message, say}) => {
   botId = test.user_id;
   slackBaseUrl = test.url
 })();
-
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Hello World!');
-}).listen(process.env.PORT || 8080);

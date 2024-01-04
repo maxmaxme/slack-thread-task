@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  bot:
+    build: .
+    expose:
+      - "${PORT}"
+    environment:
+      - PORT
+      - SLACK_TOKEN
+      - SLACK_SIGNING_SECRET
+      - SLACK_APP_TOKEN
+      - OPENAI_API_KEY
+      - YOUTRACK_BASE_URL
