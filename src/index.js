@@ -71,7 +71,7 @@ app.message(/.*/, async ({message, say}) => {
 
     try {
       const reply = JSON.parse(completion.choices[0].message.content || '{}')
-      const createTaskDescription = `**Task:**\n` + reply.description + `\n\n\n\n**Slack thread:** ${slackBaseUrl}archives/${message.channel}/p${message.ts.replace('.', '')}`
+      const createTaskDescription = `**Task:**\n` + reply.description + `\n\n\n\n**Slack thread:** ${slackBaseUrl}archives/${message.channel}/p${message.thread_ts.replace('.', '')}`
       const createTaskLink = `<${youtrackBaseUrl}/newIssue?summary=${encodeURIComponent(reply.summary)}&description=${encodeURIComponent(createTaskDescription)}|Create task>`
       const text = `Task: ${reply.summary}\n\nDescription: ${reply.description}\n\n${createTaskLink}`
       await say({
